@@ -1,17 +1,13 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import * as firebase from "firebase";
 import React from "react";
+import ApiKeys from "./components/ApiKeys";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyARr9mhXss5vqr1ZWzyfWw6sI6rNeNWxBQ",
-  authDomain: "q-aqua.firebaseapp.com",
-  databaseURL: "https://q-aqua.firebaseio.com",
-  projectId: "q-aqua",
-  storageBucket: "",
-  messagingSenderId: "154780930991",
-  appId: "1:154780930991:web:76cb93f7cf55b812"
-};
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    firebase.initializeApp(ApiKeys.FirebaseConfig);
+  }
   render() {
     return (
       <ImageBackground
@@ -24,15 +20,11 @@ export default class App extends React.Component {
             Get water at your doorstep within minutes
           </Text>
           <Button style={styles.button}>
-            <Text style={styles.buttonText}>
-            Continue as a Water Supplier
-            </Text>
+            <Text style={styles.buttonText}>Continue as a Water Supplier</Text>
           </Button>
 
           <Button style={styles.button}>
-            <Text style={styles.buttonText}>
-            Continue as a Customer
-            </Text>
+            <Text style={styles.buttonText}>Continue as a Customer</Text>
           </Button>
         </View>
       </ImageBackground>
@@ -53,8 +45,5 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     bottom: 250
   },
-  button:{
-
-  }
-
+  button: {}
 });
