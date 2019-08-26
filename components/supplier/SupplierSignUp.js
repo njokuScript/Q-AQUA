@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { View } from "native-base";
 
-export class signUp extends Component {
+export class SupplierSignUp extends Component {
   render() {
     return (
       <View>
@@ -12,4 +12,4 @@ export class signUp extends Component {
   }
 }
 
-export default signUp;
+export default SupplierSignUp;
