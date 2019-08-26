@@ -4,7 +4,7 @@ import React from "react";
 import ApiKeys from "./components/constants/ApiKeys";
 import 
 
- class App extends React.Component {
+ export default class App extends React.Component {
   constructor(props) {
     super(props);
     firebase.initializeApp(ApiKeys.FirebaseConfig);
