@@ -21,7 +21,6 @@ export default class App extends React.Component {
         <View>
           <Text style={styles.text}>Q-AQUA</Text>
           <Text style={{ bottom: "70px" }}>
-        
             Get water at your doorstep within minutes
           </Text>
         </View>
@@ -30,7 +29,6 @@ export default class App extends React.Component {
   }
 }
 const styles = StyleSheet.create({
-  
   container: {
     flex: 1,
     alignItems: "center",
