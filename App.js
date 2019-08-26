@@ -1,7 +1,7 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import * as firebase from "firebase";
 import React from "react";
-import ApiKeys from "./components/ApiKeys";
+import ApiKeys from "./components/constants/ApiKeys";
 
 export default class App extends React.Component {
   constructor(props) {
