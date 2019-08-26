@@ -10,6 +10,7 @@ import screenChoice from "./components/main/screenChoice"
     super(props);
     firebase.initializeApp(ApiKeys.FirebaseConfig);
   }
+
   render() {
     return (
       <View style={styles.container}>
@@ -19,6 +20,9 @@ import screenChoice from "./components/main/screenChoice"
   }
 }
 
+const AuthStack = createStackNavigator({
+  Home:RiderDriverScreenChoice
+})
 const styles = StyleSheet.create({
   container: {
     flex: 1,
