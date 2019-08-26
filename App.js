@@ -20,9 +20,20 @@ export default class App extends React.Component {
       >
         <View>
           <Text style={styles.text}>Q-AQUA</Text>
-          <Text style={{ bottom: "70px" }}>
+          <Text style={{ bottom: "230px" }}>
             Get water at your doorstep within minutes
           </Text>
+          <Button style={styles.button}>
+            <Text style={styles.buttonText}>
+            Continue as a Water Supplier
+            </Text>
+          </Button>
+
+          <Button style={styles.button}>
+            <Text style={styles.buttonText}>
+            Continue as a Customer
+            </Text>
+          </Button>
         </View>
       </ImageBackground>
     );
@@ -41,5 +52,9 @@ const styles = StyleSheet.create({
     textAlign: "justify",
     alignSelf: "center",
     bottom: 250
+  },
+  button:{
+
   }
+
 });
