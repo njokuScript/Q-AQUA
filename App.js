@@ -4,13 +4,14 @@ import * as firebase from "firebase";
 import React from "react";
 //import ApiKey from "./components/constants/ApiKey";
 import ScreenChoice from "./components/main/ScreenChoice";
-import SupplierLogSign from "./components/supplier/SupplierLogSign"
+import AuthLoadingScreen from "./components/main/AuthLoadingScreen";
+import SupplierLogSign from "./components/supplier/SupplierLogSign";
 import CustomerHome from "./components/customer/CustomerHome";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    //firebase.initializeApp(ApiKeys.FirebaseConfig);
+    firebase.initializeApp(ApiKey.FirebaseConfig);
   }
 
   render() {

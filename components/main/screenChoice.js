@@ -9,8 +9,6 @@ import {
 import * as firebase from "firebase";
 import React from "react";
 //import ApiKey from "../constants/ApiKey";
-
-import { createSwitchNavigator, createStackNavigator } from "react-navigation";
 import SupplierLogSign from "../supplier/SupplierLogSign";
 export default class screenChoice extends React.Component {
   static navigationOptions = {
@@ -29,7 +27,7 @@ export default class screenChoice extends React.Component {
         </Text>
 
         <View style={styles.screenContainer}>
-          <TouchableOpacity onPress={this.navigateSupplier()}>
+          <TouchableOpacity onPress={this.navigateSupplier}>
             <Text style={styles.button}>Continue as a Water Supplier</Text>
           </TouchableOpacity>
         </View>
@@ -43,7 +41,7 @@ export default class screenChoice extends React.Component {
   }
 
   navigateSupplier = () => {
-    navigation.navigate("SupplierScreen");
+    this.props.navigation.navigate("SupplierScreen");
   };
   navigateCustomer = () => {
     this.props.navigation.navigate("CustomerScreen");
