@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Tue Aug 27 2019 17:25:48 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* App.js
+* components/main/screenChoice.js
+
+
+Created files:
+* components/main/AuthLoadingScreen.js
+* components/supplier/SupplierHome.js
+
+
+Deleted files:
+
+
+Renamed files:
