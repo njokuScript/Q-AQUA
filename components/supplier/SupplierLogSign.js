@@ -6,6 +6,7 @@ import {
   Text,
   View
 } from "react-native";
+
 import * as firebase from "firebase";
 import React from "react";
 //import ApiKey from "../constants/ApiKey";
@@ -42,14 +43,6 @@ const styles = StyleSheet.create({
   screenContainer: {
     textAlign: "center",
     top: 70
-  },
-  text: {
-    fontWeight: "bold",
-    color: "#fff",
-    fontSize: 50,
-    textAlign: "justify",
-    alignSelf: "center",
-    bottom: 250
   },
   button: {
     backgroundColor: "#C1C1C1",

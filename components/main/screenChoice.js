@@ -9,6 +9,8 @@ import {
 import * as firebase from "firebase";
 import React from "react";
 //import ApiKey from "../constants/ApiKey";
+
+import { createSwitchNavigator, createStackNavigator } from "react-navigation";
 import SupplierLogSign from "../supplier/SupplierLogSign";
 export default class screenChoice extends React.Component {
   static navigationOptions = {
@@ -27,7 +29,7 @@ export default class screenChoice extends React.Component {
         </Text>
 
         <View style={styles.screenContainer}>
-          <TouchableOpacity onPress={this._navigateSupplier}>
+          <TouchableOpacity onPress={() = > navigation.navigate("SupplierScreen")}>
             <Text style={styles.button}>Continue as a Water Supplier</Text>
           </TouchableOpacity>
         </View>
@@ -40,18 +42,26 @@ export default class screenChoice extends React.Component {
     );
   }
 
-  _navigateSupplier = () => {
-    this.props.navigation.navigate("SupplierScreen");
-  };
-  _navigateCustomer = () => {
-    this.props.navigation.navigate("CustomerScreen");
-  };
+  // navigateSupplier = () => {
+  //   navigation.navigate("SupplierScreen");
+  // };
+  // navigateCustomer = () => {
+  //   this.props.navigation.navigate("CustomerScreen");
+  // };
 }
 
 const styles = StyleSheet.create({
   screenContainer: {
     textAlign: "center",
     top: 70
+  },
+  text: {
+    fontWeight: "bold",
+    color: "#fff",
+    fontSize: 50,
+    textAlign: "justify",
+    alignSelf: "center",
+    bottom: 250
   },
   button: {
     backgroundColor: "#C1C1C1",
