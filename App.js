@@ -2,13 +2,13 @@ import { StyleSheet, Text, View } from "react-native";
 import { createSwitchNavigator, createStackNavigator } from "react-navigation";
 import * as firebase from "firebase";
 import React from "react";
-import ApiKeys from "./components/constants/ApiKeys";
+//import ApiKey from "./components/constants/ApiKey";
 import screenChoice from "./components/main/screenChoice";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    firebase.initializeApp(ApiKeys.FirebaseConfig);
+    //firebase.initializeApp(ApiKeys.FirebaseConfig);
   }
 
   render() {

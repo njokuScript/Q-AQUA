@@ -1,7 +1,7 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import * as firebase from "firebase";
 import React from "react";
-import ApiKeys from "./components/constants/ApiKeys";
+//import ApiKey from "../constants/ApiKey";
 
 export default class screenChoice extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class screenChoice extends React.Component {
   render() {
     return (
       <ImageBackground
-        source={require("./image/bimage.png")}
+        source={require("../main/image/bimage.png")}
         style={styles.container}
       >
         <View>
