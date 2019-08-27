@@ -30,7 +30,7 @@ export default class screenChoice extends React.Component {
         </View>
         <View style={styles.container}>
           <TouchableOpacity>
-            <Text style={styles.button}>Continue as a Customer</Text>
+            <Text style={styles.button2}>Continue as a Customer</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -40,7 +40,8 @@ export default class screenChoice extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    textAlign: "center"
+    textAlign: "center",
+    top: 70
   },
   text: {
     fontWeight: "bold",
@@ -54,10 +55,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#C1C1C1",
     alignSelf: "center",
     color: "white",
-    borderRadius: 20,
-    borderWidth: 30,
     fontSize: 16,
     overflow: "hidden",
-    textAlign: "center"
+    textAlign: "center",
+    width: 300,
+    borderRadius: 20,
+    padding: 10
+  },
+  button2: {
+    backgroundColor: "#C1C1C1",
+    alignSelf: "center",
+    color: "white",
+    fontSize: 16,
+    overflow: "hidden",
+    textAlign: "center",
+    marginTop: 30,
+    width: 300,
+    borderRadius: 20,
+    padding: 10
   }
 });
