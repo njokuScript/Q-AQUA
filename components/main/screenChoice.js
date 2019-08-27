@@ -28,16 +28,16 @@ export default class screenChoice extends React.Component {
           </Text>
 
           <View style={styles.button}>
-            <Button>
+            <TouchableOpacity>
               <Text style={styles.buttonText}>
                 Continue as a Water Supplier
               </Text>
-            </Button>
+            </TouchableOpacity>
           </View>
           <View style={styles.button}>
-            <Button>
-              <Text style={styles.buttonText}>Continue as a Customer</Text>
-            </Button>
+            <TouchableOpacity>
+              <Text>Continue as a Customer</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ImageBackground>
