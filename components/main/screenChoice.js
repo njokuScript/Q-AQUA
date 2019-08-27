@@ -32,7 +32,7 @@ export default class screenChoice extends React.Component {
           </TouchableOpacity>
         </View>
         <View style={styles.screenContainer}>
-          <TouchableOpacity onPress={this._navigateCustomer}>
+          <TouchableOpacity>
             <Text style={styles.button2}>Continue as a Customer</Text>
           </TouchableOpacity>
         </View>
@@ -46,9 +46,6 @@ export default class screenChoice extends React.Component {
   _navigateCustomer = () => {
     this.props.navigation.navigate("CustomerScreen");
   };
-  
-const AuthStackCustomer = createStackNavigator({ Customer: CustomerHome });
-
 }
 
 const styles = StyleSheet.create({

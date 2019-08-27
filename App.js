@@ -38,6 +38,11 @@ const AuthStack = createStackNavigator(
 
 const AuthStackCustomer = createStackNavigator({ Customer: CustomerHome });
 
+export default createSwitchNavigator(
+  {
+    Hom
+  }
+)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
