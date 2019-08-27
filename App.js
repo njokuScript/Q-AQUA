@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import { createSwitchNavigator, createStackNavigator } from "react-navigation";
 import * as firebase from "firebase";
 import React from "react";
@@ -13,9 +13,14 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <ScreenChoice />
-      </View>
+      <ImageBackground
+        source={require("./components/main/image/bimage.png")}
+        style={styles.container}
+      >
+        <View style={styles.container}>
+          <ScreenChoice />
+        </View>
+      </ImageBackground>
     );
   }
 }
@@ -27,6 +32,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    opacity: 60
   }
 });

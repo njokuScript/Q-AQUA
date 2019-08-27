@@ -17,38 +17,30 @@ export default class screenChoice extends React.Component {
   }
   render() {
     return (
-      <ImageBackground
-        source={require("../main/image/bimage.png")}
-        style={styles.container}
-      >
-        <View>
-          <Text style={styles.text}>Q-AQUA</Text>
-          <Text style={{ bottom: 230 }}>
-            Get water at your doorstep within minutes
-          </Text>
+      <View>
+        <Text style={styles.text}>Q-AQUA</Text>
+        <Text style={{ bottom: 230, color: "white" }}>
+          Get water at your doorstep within minutes
+        </Text>
 
-          <View style={styles.button}>
-            <TouchableOpacity>
-              <Text style={styles.buttonText}>
-                Continue as a Water Supplier
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.button}>
-            <TouchableOpacity>
-              <Text>Continue as a Customer</Text>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.container}>
+          <TouchableOpacity>
+            <Text style={styles.button}>Continue as a Water Supplier</Text>
+          </TouchableOpacity>
         </View>
-      </ImageBackground>
+        <View style={styles.container}>
+          <TouchableOpacity>
+            <Text style={styles.button}>Continue as a Customer</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     );
   }
 }
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
+    textAlign: center
   },
   text: {
     fontWeight: "bold",
@@ -58,5 +50,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     bottom: 250
   },
-  button: {}
+  button: {
+    backgroundColor: "#000000",
+    alignSelf: "center"
+  }
 });
