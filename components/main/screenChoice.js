@@ -19,16 +19,16 @@ export default class screenChoice extends React.Component {
     return (
       <View>
         <Text style={styles.text}>Q-AQUA</Text>
-        <Text style={{ bottom: 230, color: "white" }}>
+        <Text style={{ bottom: 230, color: "white", fontSize: 17 }}>
           Get water at your doorstep within minutes
         </Text>
 
-        <View style={styles.container}>
+        <View style={styles.screenContainer}>
           <TouchableOpacity>
             <Text style={styles.button}>Continue as a Water Supplier</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.container}>
+        <View style={styles.screenContainer}>
           <TouchableOpacity>
             <Text style={styles.button2}>Continue as a Customer</Text>
           </TouchableOpacity>
@@ -39,7 +39,7 @@ export default class screenChoice extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screenContainer: {
     textAlign: "center",
     top: 70
   },
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#C1C1C1",
     alignSelf: "center",
-    color: "white",
+    color: "#24292E",
     fontSize: 16,
     overflow: "hidden",
     textAlign: "center",
