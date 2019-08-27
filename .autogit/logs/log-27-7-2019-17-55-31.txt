@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Tue Aug 27 2019 17:55:31 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* App.js
+
+
+Created files:
+* .autogit/logs/log-27-7-2019-17-25-48.txt
+
+
+Deleted files:
+
+
+Renamed files:
