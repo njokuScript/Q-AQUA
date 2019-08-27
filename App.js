@@ -26,12 +26,18 @@ export default class App extends React.Component {
   }
 }
 
-const AuthStack = createStackNavigator({
-  Home: ScreenChoice,
-  CustomerScreen: CustomerHome
-});
+const AuthStack = createStackNavigator(
+  {
+    Home: ScreenChoice,
+    CustomerScreen: CustomerHome
+  },
+  {
+    initialRouteName: "Home"
+  }
+);
 
 const AuthStackCustomer = createStackNavigator({ Customer: CustomerHome });
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

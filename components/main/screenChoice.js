@@ -11,6 +11,9 @@ import React from "react";
 //import ApiKey from "../constants/ApiKey";
 
 export default class screenChoice extends React.Component {
+  static navigationOptions = {
+    header: null
+  };
   constructor(props) {
     super(props);
     //firebase.initializeApp(ApiKeys.FirebaseConfig);
@@ -29,13 +32,23 @@ export default class screenChoice extends React.Component {
           </TouchableOpacity>
         </View>
         <View style={styles.screenContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={this._navigateCustomer}>
             <Text style={styles.button2}>Continue as a Customer</Text>
           </TouchableOpacity>
         </View>
       </View>
     );
   }
+
+  _navigateSupplier = async () => {
+    this.props.navigation.navigate("RiderScreen");
+  };
+  _navigateCustomer = () => {
+    this.props.navigation.navigate("CustomerScreen");
+  };
+  
+const AuthStackCustomer = createStackNavigator({ Customer: CustomerHome });
+
 }
 
 const styles = StyleSheet.create({

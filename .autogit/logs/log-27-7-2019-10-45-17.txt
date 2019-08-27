@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Tue Aug 27 2019 10:45:17 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* App.js
+* components/customer/Customerhome.js
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
