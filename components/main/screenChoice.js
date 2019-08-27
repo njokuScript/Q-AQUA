@@ -29,7 +29,7 @@ export default class screenChoice extends React.Component {
         </Text>
 
         <View style={styles.screenContainer}>
-          <TouchableOpacity onPress={() = > navigation.navigate("SupplierScreen")}>
+          <TouchableOpacity onPress={this.navigateSupplier()}>
             <Text style={styles.button}>Continue as a Water Supplier</Text>
           </TouchableOpacity>
         </View>
@@ -42,12 +42,12 @@ export default class screenChoice extends React.Component {
     );
   }
 
-  // navigateSupplier = () => {
-  //   navigation.navigate("SupplierScreen");
-  // };
-  // navigateCustomer = () => {
-  //   this.props.navigation.navigate("CustomerScreen");
-  // };
+  navigateSupplier = () => {
+    navigation.navigate("SupplierScreen");
+  };
+  navigateCustomer = () => {
+    this.props.navigation.navigate("CustomerScreen");
+  };
 }
 
 const styles = StyleSheet.create({
