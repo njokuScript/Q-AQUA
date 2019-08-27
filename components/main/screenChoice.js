@@ -40,7 +40,7 @@ export default class screenChoice extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    textAlign: center
+    textAlign: "center"
   },
   text: {
     fontWeight: "bold",
@@ -51,7 +51,13 @@ const styles = StyleSheet.create({
     bottom: 250
   },
   button: {
-    backgroundColor: "#000000",
-    alignSelf: "center"
+    backgroundColor: "#C1C1C1",
+    alignSelf: "center",
+    color: "white",
+    borderRadius: 20,
+    borderWidth: 30,
+    fontSize: 16,
+    overflow: "hidden",
+    textAlign: "center"
   }
 });
