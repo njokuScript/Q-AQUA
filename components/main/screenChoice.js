@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   button2: {
     backgroundColor: "#C1C1C1",
     alignSelf: "center",
-    color: "white",
+    color: "#24292E",
     fontSize: 16,
     overflow: "hidden",
     textAlign: "center",
