@@ -3,7 +3,7 @@ import { createSwitchNavigator, createStackNavigator } from "react-navigation";
 import * as firebase from "firebase";
 import React from "react";
 //import ApiKey from "./components/constants/ApiKey";
-import screenChoice from "./components/main/screenChoice";
+import ScreenChoice from "./components/main/ScreenChoice";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -14,14 +14,14 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text></Text>
+        <ScreenChoice />
       </View>
     );
   }
 }
 
 const AuthStack = createStackNavigator({
-  Home: screenChoice
+  Home: ScreenChoice
 });
 const styles = StyleSheet.create({
   container: {

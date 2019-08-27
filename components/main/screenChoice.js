@@ -1,4 +1,11 @@
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  ImageBackground,
+  TouchableOpacity,
+  Button,
+  StyleSheet,
+  Text,
+  View
+} from "react-native";
 import * as firebase from "firebase";
 import React from "react";
 //import ApiKey from "../constants/ApiKey";
@@ -19,13 +26,13 @@ export default class screenChoice extends React.Component {
           <Text style={{ bottom: "230px" }}>
             Get water at your doorstep within minutes
           </Text>
-          <Button style={styles.button}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Continue as a Water Supplier</Text>
-          </Button>
+          </TouchableOpacity>
 
-          <Button style={styles.button}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Continue as a Customer</Text>
-          </Button>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     );
