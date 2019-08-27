@@ -9,7 +9,7 @@ import {
 import * as firebase from "firebase";
 import React from "react";
 //import ApiKey from "../constants/ApiKey";
-import SupplierLogSign from "../supplier/SupplierLogSign";
+
 export default class screenChoice extends React.Component {
   static navigationOptions = {
     header: null
@@ -22,36 +22,34 @@ export default class screenChoice extends React.Component {
     return (
       <View>
         <Text style={styles.text}>Q-AQUA</Text>
-        <Text style={{ bottom: 230, color: "white", fontSize: 17 }}>
-          Get water at your doorstep within minutes
-        </Text>
 
         <View style={styles.screenContainer}>
-          <TouchableOpacity onPress={this._navigateSupplier}>
-            <Text style={styles.button}>Continue as a Water Supplier</Text>
+          <TouchableOpacity>
+            <Text style={styles.button}>Sign Up</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.screenContainer}>
           <TouchableOpacity>
-            <Text style={styles.button2}>Continue as a Customer</Text>
+            <Text style={styles.button2}>Login</Text>
           </TouchableOpacity>
         </View>
       </View>
     );
   }
-
-  _navigateSupplier = () => {
-    this.props.navigation.navigate("SupplierScreen");
-  };
-  _navigateCustomer = () => {
-    this.props.navigation.navigate("CustomerScreen");
-  };
 }
 
 const styles = StyleSheet.create({
   screenContainer: {
     textAlign: "center",
     top: 70
+  },
+  text: {
+    fontWeight: "bold",
+    color: "#fff",
+    fontSize: 50,
+    textAlign: "justify",
+    alignSelf: "center",
+    bottom: 250
   },
   button: {
     backgroundColor: "#C1C1C1",

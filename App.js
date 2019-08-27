@@ -4,6 +4,7 @@ import * as firebase from "firebase";
 import React from "react";
 //import ApiKey from "./components/constants/ApiKey";
 import ScreenChoice from "./components/main/ScreenChoice";
+import SupplierLogSign from "./components/supplier/SupplierLogSign";
 import CustomerHome from "./components/customer/CustomerHome";
 
 export default class App extends React.Component {
@@ -29,6 +30,7 @@ export default class App extends React.Component {
 const AuthStack = createStackNavigator(
   {
     Home: ScreenChoice,
+    SupplierScreen: SupplierLogSign,
     CustomerScreen: CustomerHome
   },
   {
@@ -38,11 +40,6 @@ const AuthStack = createStackNavigator(
 
 const AuthStackCustomer = createStackNavigator({ Customer: CustomerHome });
 
-export default createSwitchNavigator(
-  {
-    Hom
-  }
-)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
