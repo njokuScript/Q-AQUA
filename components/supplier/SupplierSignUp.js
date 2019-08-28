@@ -69,8 +69,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "center",
-    alignItems: "center",
-    top: 144
+    alignItems: "center"
   },
   inputField: {
     backgroundColor: "#F3F3F3",
