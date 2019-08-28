@@ -8,6 +8,8 @@ import AuthLoadingScreen from "./components/main/AuthLoadingScreen";
 import SupplierLogSign from "./components/supplier/SupplierLogSign";
 import CustomerHome from "./components/customer/CustomerHome";
 import SupplierHome from "./components/supplier/SupplierHome";
+import SupplierLogin from "./components/supplier/SupplierLogin";
+import SupplierSignUp from "./components/supplier/SupplierSignUp";
 
 class App extends React.Component {
   constructor(props) {
@@ -32,7 +34,11 @@ class App extends React.Component {
 const AuthStack = createStackNavigator(
   {
     Home: ScreenChoice,
+    //supplier
     SupplierScreen: SupplierLogSign,
+    SupplierLog: SupplierLogin,
+    SupplierReg: SupplierSignUp,
+    //customer
     CustomerScreen: CustomerHome
   },
   {
