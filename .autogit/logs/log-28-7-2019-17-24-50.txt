@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Wed Aug 28 2019 17:24:50 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* components/constants/ApiKey.js
+* components/supplier/SupplierSignUp.js
+
+
+Created files:
+* .autogit/logs/log-28-7-2019-16-24-1.txt
+
+
+Deleted files:
+
+
+Renamed files:

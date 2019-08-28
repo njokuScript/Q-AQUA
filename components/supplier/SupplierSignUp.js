@@ -33,9 +33,39 @@ export default class SupplierSignUp extends React.Component {
   };
   render() {
     return (
-      <View>
-        <Text>HEY</Text>
-      </View>
+      <KeyboardAvoidingView behaviour='padding' style={styles.wrapper}>
+        <View style={styles.container}>
+          <View style={styles.name}>
+            <TextInput placeholder='First Name' maxLength={30} />
+            <TextInput placeholder='Last Name' maxLength={30} />
+            <TextInput placeholder='Email' maxLength={40} />
+            <TextInput placeholder='Water Source' />
+            <TextInput
+              placeholder='Phone Number'
+              keyboardType='numeric'
+              maxLength={11}
+            />
+            <TextInput placeholder='Location' />
+            <TextInput placeholder='vehicle Number' maxLength={10} />
+            <TextInput
+              placeholder='Password'
+              maxLength={50}
+              secureEntryText={true}
+            />
+          </View>
+        </View>
+      </KeyboardAvoidingView>
     );
   }
 }
+const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center"
+  }
+});
