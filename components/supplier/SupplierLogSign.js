@@ -29,12 +29,12 @@ export default class screenChoice extends React.Component {
           <Text style={styles.text}>Q-AQUA</Text>
 
           <View style={styles.screenContainer}>
-            <TouchableOpacity onPress={this._navigateSupplierSignUp}>
+            <TouchableOpacity onPress={this.navigateSupplierSignUp}>
               <Text style={styles.button}>Sign Up</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.screenContainer}>
-            <TouchableOpacity onPress={this._navigateSupplierLogin}>
+            <TouchableOpacity onPress={this.navigateSupplierLogin}>
               <Text style={styles.button2}>Login</Text>
             </TouchableOpacity>
           </View>
@@ -43,10 +43,10 @@ export default class screenChoice extends React.Component {
     );
   }
 
-  _navigateSupplierLogin = () => {
+  navigateSupplierLogin = () => {
     this.props.navigation.navigate("SupplierLog");
   };
-  _navigateSupplierSignUp = () => {
+  navigateSupplierSignUp = () => {
     this.props.navigation.navigate("SupplierReg");
   };
 }
