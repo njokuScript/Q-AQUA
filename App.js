@@ -40,24 +40,24 @@ const AuthStack = createStackNavigator(
   }
 );
 
-// const AuthStackCustomer = createStackNavigator({ Customer: CustomerHome });
-// const AuthStackSupplier = createStackNavigator({ Supplier: SupplierHome });
+const AuthStackCustomer = createStackNavigator({ Customer: CustomerHome });
+const AuthStackSupplier = createStackNavigator({ Supplier: SupplierHome });
 
-// export default createSwitchNavigator(
-//   {
-//     AuthLoading: AuthLoadingScreen,
-//     App1: AuthStackCustomer,
-//     App2: AuthStackSupplier,
-//     Auth: AuthStack
-//   },
-//   {
-//     initialRouteName: "AuthLoading"
-//   }
-// );
+export default createSwitchNavigator(
+  {
+    AuthLoading: AuthLoadingScreen,
+    App1: AuthStackCustomer,
+    App2: AuthStackSupplier,
+    Auth: AuthStack
+  },
+  {
+    initialRouteName: "AuthLoading"
+  }
+);
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
+    // flex: 1,
+    // alignItems: "center",
+    // justifyContent: "center"
   }
 });

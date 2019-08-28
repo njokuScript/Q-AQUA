@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Wed Aug 28 2019 08:33:39 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* App.js
+* components/main/screenChoice.js
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:

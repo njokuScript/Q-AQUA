@@ -21,20 +21,25 @@ export default class screenChoice extends React.Component {
   }
   render() {
     return (
-      <View>
-        <Text style={styles.text}>Q-AQUA</Text>
+      <ImageBackground
+        source={require("../main/image/bimage.png")}
+        style={styles.container}
+      >
+        <View>
+          <Text style={styles.text}>Q-AQUA</Text>
 
-        <View style={styles.screenContainer}>
-          <TouchableOpacity>
-            <Text style={styles.button}>Sign Up</Text>
-          </TouchableOpacity>
+          <View style={styles.screenContainer}>
+            <TouchableOpacity>
+              <Text style={styles.button}>Sign Up</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.screenContainer}>
+            <TouchableOpacity>
+              <Text style={styles.button2}>Login</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.screenContainer}>
-          <TouchableOpacity>
-            <Text style={styles.button2}>Login</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -43,6 +48,21 @@ const styles = StyleSheet.create({
   screenContainer: {
     textAlign: "center",
     top: 70
+  },
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    opacity: 0.9
+  },
+
+  text: {
+    fontWeight: "bold",
+    color: "#fff",
+    fontSize: 50,
+    textAlign: "justify",
+    alignSelf: "center",
+    bottom: 250
   },
   button: {
     backgroundColor: "#C1C1C1",

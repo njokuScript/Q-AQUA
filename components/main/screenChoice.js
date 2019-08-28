@@ -20,23 +20,28 @@ export default class ScreenChoice extends React.Component {
   }
   render() {
     return (
-      <View>
-        <Text style={styles.text}>Q-AQUA</Text>
-        <Text style={{ bottom: 230, color: "white", fontSize: 17 }}>
-          Get water at your doorstep within minutes
-        </Text>
+      <ImageBackground
+        source={require("./image/bimage.png")}
+        style={styles.container}
+      >
+        <View>
+          <Text style={styles.text}>Q-AQUA</Text>
+          <Text style={{ bottom: 230, color: "white", fontSize: 17 }}>
+            Get water at your doorstep within minutes
+          </Text>
 
-        <View style={styles.screenContainer}>
-          <TouchableOpacity onPress={this.navigateSupplier}>
-            <Text style={styles.button}>Continue as a Water Supplier</Text>
-          </TouchableOpacity>
+          <View style={styles.screenContainer}>
+            <TouchableOpacity onPress={this.navigateSupplier}>
+              <Text style={styles.button}>Continue as a Water Supplier</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.screenContainer}>
+            <TouchableOpacity onPress={this.navigateCustomer}>
+              <Text style={styles.button2}>Continue as a Customer</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.screenContainer}>
-          <TouchableOpacity onPress={this.navigateCustomer}>
-            <Text style={styles.button2}>Continue as a Customer</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      </ImageBackground>
     );
   }
 
@@ -50,7 +55,14 @@ export default class ScreenChoice extends React.Component {
 
 const styles = StyleSheet.create({
   screenContainer: {
-    textAlign: "center"
+    textAlign: "center",
+    top: 70
+  },
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    opacity: 0.9
   },
   text: {
     fontWeight: "bold",
