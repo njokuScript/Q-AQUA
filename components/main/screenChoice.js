@@ -10,7 +10,7 @@ import * as firebase from "firebase";
 import React from "react";
 //import ApiKey from "../constants/ApiKey";
 import SupplierLogSign from "../supplier/SupplierLogSign";
-export default class screenChoice extends React.Component {
+export default class ScreenChoice extends React.Component {
   static navigationOptions = {
     header: null
   };
@@ -50,8 +50,7 @@ export default class screenChoice extends React.Component {
 
 const styles = StyleSheet.create({
   screenContainer: {
-    textAlign: "center",
-    top: 70
+    textAlign: "center"
   },
   text: {
     fontWeight: "bold",
