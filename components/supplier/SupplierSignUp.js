@@ -35,7 +35,7 @@ export default class SupplierSignUp extends React.Component {
     return (
       <KeyboardAvoidingView behaviour='padding' style={styles.wrapper}>
         <View style={styles.container}>
-          <View style={styles.name}>
+          <View style={styles.inputField1}>
             <TextInput placeholder='First Name' maxLength={30} />
             <TextInput placeholder='Last Name' maxLength={30} />
             <TextInput placeholder='Email' maxLength={40} />
@@ -53,6 +53,9 @@ export default class SupplierSignUp extends React.Component {
               secureEntryText={true}
             />
           </View>
+          <TouchableOpacity>
+            <Text>Continue</Text>
+          </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
     );
@@ -66,6 +69,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    top: 144
+  },
+  inputField: {
+    backgroundColor: "#F3F3F3",
+    width: 302,
+    height: 40,
+    borderRadius: 10
   }
 });
