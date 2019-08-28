@@ -1,9 +1,5 @@
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
-import {
-  createSwitchNavigator,
-  createStackNavigator,
-  createAppContainer
-} from "react-navigation";
+import { createSwitchNavigator, createStackNavigator } from "react-navigation";
 import * as firebase from "firebase";
 import React from "react";
 //import ApiKey from "./components/constants/ApiKey";
@@ -27,14 +23,12 @@ class App extends React.Component {
       >
         <View>
           <ScreenChoice />
-
-          <AppContainer />
         </View>
       </ImageBackground>
     );
   }
 }
-const AppContainer = createAppContainer(AuthStack);
+
 const AuthStack = createStackNavigator(
   {
     Home: ScreenChoice,
