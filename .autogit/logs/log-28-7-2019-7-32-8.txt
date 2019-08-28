@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Wed Aug 28 2019 07:32:08 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* package-lock.json
+* package.json
+* yarn.lock
+
+
+Created files:
+* .autogit/logs/log-28-7-2019-7-0-32.txt
+* yarn-error.log
+
+
+Deleted files:
+
+
+Renamed files:
