@@ -32,7 +32,7 @@ export default class screenChoice extends React.Component {
           </TouchableOpacity>
         </View>
         <View style={styles.screenContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={this.navigateCustomer}>
             <Text style={styles.button2}>Continue as a Customer</Text>
           </TouchableOpacity>
         </View>
