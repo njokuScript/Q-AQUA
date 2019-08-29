@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Thu Aug 29 2019 08:14:25 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* components/supplier/SupplierSignUp.js
+
+
+Created files:
+* .autogit/logs/log-29-7-2019-7-45-3.txt
+
+
+Deleted files:
+
+
+Renamed files:
