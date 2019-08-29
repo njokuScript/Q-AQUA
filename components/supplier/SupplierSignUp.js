@@ -100,8 +100,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "center",
-    alignItems: "center",
-    paddingBottom: 60
+    alignItems: "center"
   },
   inputField: {
     backgroundColor: "#F3F3F3",
@@ -135,7 +134,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 7,
     flexDirection: "row"
   },
   signupText: {
