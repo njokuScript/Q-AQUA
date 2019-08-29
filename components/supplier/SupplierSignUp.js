@@ -23,7 +23,7 @@ export default class SupplierSignUp extends React.Component {
     header: null
   };
   constructor(props){
-    super(props){
+    super(props);
         this.state{
           firstname: '',
           lastname:'',
@@ -37,7 +37,7 @@ export default class SupplierSignUp extends React.Component {
         if(!firebase.apps.length){
           firebase.initializeApp(ApiKey.FirebaseConfig);
         }
-    }
+    
   }
   render() {
     return (

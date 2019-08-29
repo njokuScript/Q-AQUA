@@ -23,13 +23,13 @@ export default class SupplierLogin extends React.Component {
   static navigationOptions = {
     header: null
   };
-  constructor(){
-    super(){
+  constructor(props){
+    super(props);
       this.state={
         email:'',
         password:''
 
-      }
+      
     }
   }
   render() {
