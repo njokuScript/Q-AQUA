@@ -1,4 +1,4 @@
-import React,from "react";
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -23,45 +23,46 @@ export default class SupplierLogin extends React.Component {
   static navigationOptions = {
     header: null
   };
-  constructor(props){
+  constructor(props) {
     super(props);
-      this.state={
-        email:'',
-        password:''
-
-      
-    }
+    this.state = {
+      email: "",
+      password: ""
+    };
   }
   render() {
     return (
       <KeyboardAvoidingView behaviour='padding' style={styles.wrapper}>
-      <View style={styles.container}>
-        <TextInput
-          placeholder='Email Address'
-          maxLength={30}
-          style={styles.inputField}
-          underlineColorAndroid='rgba(0,0,0,0)'
-          onChangeText={(email)=> this.setState({email})}
-        />
-        <TextInput
+        <View style={styles.container}>
+          <TextInput
+            placeholder='Email Address'
+            maxLength={30}
+            style={styles.inputField}
+            underlineColorAndroid='rgba(0,0,0,0)'
+            onChangeText={email => this.setState({ email })}
+          />
+          <TextInput
             placeholder='Password'
             maxLength={50}
             secureTextEntry={true}
             style={styles.inputField}
             underlineColorAndroid='rgba(0,0,0,0)'
-            onChangeText={(password)=>this.setState({password})}
+            onChangeText={password => this.setState({ password })}
           />
- <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Sign In</Text>
           </TouchableOpacity>
-          <View style={styles.signupsContent}>
+          <View style={styles.signupContent}>
             <Text style={styles.signupText}>Don't have an account?</Text>
-            <TouchableOpacity style={styles.signupButton} onPress={this.navigateSupplierSignUp}>Sign Up</TouchableOpacity>
+            <TouchableOpacity
+              style={styles.signupButton}
+              onPress={this.navigateSupplierSignUp}
+            >
+              <Text>Sign Up</Text>
+            </TouchableOpacity>
           </View>
         </View>
-
-        </KeyboardAvoidingView>
-      
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -82,7 +83,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 16,
     marginVertical: 9
-  },button: {
+  },
+  button: {
     backgroundColor: "#6C63FF",
     width: 306,
     height: 50,
@@ -117,4 +119,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "500"
   }
-
+});

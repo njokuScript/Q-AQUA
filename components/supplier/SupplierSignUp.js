@@ -22,22 +22,21 @@ export default class SupplierSignUp extends React.Component {
   static navigationOptions = {
     header: null
   };
-  constructor(props){
+  constructor(props) {
     super(props);
-        this.state{
-          firstname: '',
-          lastname:'',
-          password: '',
-          email: '',
-          mobile: '',
-          vehiclenumber: '',
-          watersource:''
-        }
-        //firebase initialize
-        if(!firebase.apps.length){
-          firebase.initializeApp(ApiKey.FirebaseConfig);
-        }
-    
+    this.state = {
+      firstname: "",
+      lastname: "",
+      password: "",
+      email: "",
+      mobile: "",
+      vehiclenumber: "",
+      watersource: ""
+    };
+    //firebase initialize
+    if (!firebase.apps.length) {
+      firebase.initializeApp(ApiKey.FirebaseConfig);
+    }
   }
   render() {
     return (
@@ -48,27 +47,27 @@ export default class SupplierSignUp extends React.Component {
             maxLength={30}
             style={styles.inputField}
             underlineColorAndroid='rgba(0,0,0,0)'
-            onChangeText={(firstname)=> this.setState({firstname})}
+            onChangeText={firstname => this.setState({ firstname })}
           />
           <TextInput
             placeholder='Last Name'
             maxLength={30}
             style={styles.inputField}
             underlineColorAndroid='rgba(0,0,0,0)'
-            onChangeText={(lastname)=>this.setState({lastname})}
+            onChangeText={lastname => this.setState({ lastname })}
           />
           <TextInput
             placeholder='Email'
             maxLength={40}
             style={styles.inputField}
             underlineColorAndroid='rgba(0,0,0,0)'
-            onChangeText={(email)=>this.setState({email})}
+            onChangeText={email => this.setState({ email })}
           />
           <TextInput
             placeholder='Water Source'
             style={styles.inputField}
             underlineColorAndroid='rgba(0,0,0,0)'
-            onChangeText={(watersource)=>this.setState({watersource})}
+            onChangeText={watersource => this.setState({ watersource })}
           />
           <TextInput
             placeholder='Mobile'
@@ -76,14 +75,14 @@ export default class SupplierSignUp extends React.Component {
             maxLength={11}
             style={styles.inputField}
             underlineColorAndroid='rgba(0,0,0,0)'
-            onChangeText={(mobile)=>this.setState({mobile})}
+            onChangeText={mobile => this.setState({ mobile })}
           />
           <TextInput
             placeholder='vehicle Number'
             maxLength={10}
             style={styles.inputField}
             underlineColorAndroid='rgba(0,0,0,0)'
-            onChangeText={(vehiclenumber)=>this.setState({watersource})}
+            onChangeText={vehiclenumber => this.setState({ watersource })}
           />
           <TextInput
             placeholder='Password'
@@ -91,7 +90,7 @@ export default class SupplierSignUp extends React.Component {
             secureTextEntry={true}
             style={styles.inputField}
             underlineColorAndroid='rgba(0,0,0,0)'
-            onChangeText={(password)=>this.setState({password})}
+            onChangeText={password => this.setState({ password })}
           />
 
           <Text style={styles.textStyle}>
@@ -104,7 +103,12 @@ export default class SupplierSignUp extends React.Component {
           </TouchableOpacity>
           <View style={styles.signinsContent}>
             <Text style={styles.signinText}>Already have an account?</Text>
-            <TouchableOpacity style={styles.signinButton} onPress={this.navigateSupplierLogin}>Sign In</TouchableOpacity>
+            <TouchableOpacity
+              style={styles.signinButton}
+              onPress={this.navigateSupplierLogin}
+            >
+              <Text>Sign In</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </KeyboardAvoidingView>
