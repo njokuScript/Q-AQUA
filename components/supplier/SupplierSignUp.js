@@ -19,25 +19,11 @@ import * as firebase from "firebase";
 import ApiKey from "../constants/ApiKey";
 export default class SupplierSignUp extends React.Component {
   static navigationOptions = {
-    headerStyle: {
-      backgroundColor: "#42A5F5"
-    },
-    headerTitleStyle: {
-      color: "#fff"
-    },
-    headerBackTitleStyle: {
-      color: "#fff"
-    },
-    headerTintColor: "#fff",
-    title: "Register"
+    header: null
   };
   render() {
     return (
       <KeyboardAvoidingView behaviour='padding' style={styles.wrapper}>
-        <Image
-          source={require("../main/image/bimage2.PNG")}
-          style={styles.container}
-        ></Image>
         <View style={styles.container}>
           <TextInput
             placeholder='First Name'
@@ -104,13 +90,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    paddingBottom: 60
   },
   inputField: {
     backgroundColor: "#F3F3F3",
     width: 302,
-    borderRadius: 25,
+    height: 50,
+    borderRadius: 10,
     paddingHorizontal: 16,
-    marginVertical: 16
+    marginVertical: 9
   }
 });
