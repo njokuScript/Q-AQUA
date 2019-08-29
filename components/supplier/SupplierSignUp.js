@@ -34,6 +34,10 @@ export default class SupplierSignUp extends React.Component {
   render() {
     return (
       <KeyboardAvoidingView behaviour='padding' style={styles.wrapper}>
+        <Image
+          source={require("../main/image/bimage2.PNG")}
+          style={styles.container}
+        ></Image>
         <View style={styles.container}>
           <View style={styles.inputField1}>
             <TextInput placeholder='First Name' maxLength={30} />
