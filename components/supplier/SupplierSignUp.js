@@ -39,24 +39,55 @@ export default class SupplierSignUp extends React.Component {
           style={styles.container}
         ></Image>
         <View style={styles.container}>
-          <View style={styles.inputField1}>
-            <TextInput placeholder='First Name' maxLength={30} />
-            <TextInput placeholder='Last Name' maxLength={30} />
-            <TextInput placeholder='Email' maxLength={40} />
-            <TextInput placeholder='Water Source' />
-            <TextInput
-              placeholder='Phone Number'
-              keyboardType='numeric'
-              maxLength={11}
-            />
-            <TextInput placeholder='Location' />
-            <TextInput placeholder='vehicle Number' maxLength={10} />
-            <TextInput
-              placeholder='Password'
-              maxLength={50}
-              secureEntryText={true}
-            />
-          </View>
+          <TextInput
+            placeholder='First Name'
+            maxLength={30}
+            style={styles.inputField}
+            underlineColorAndroid='rgba(0,0,0,0)'
+          />
+          <TextInput
+            placeholder='Last Name'
+            maxLength={30}
+            style={styles.inputField}
+            underlineColorAndroid='rgba(0,0,0,0)'
+          />
+          <TextInput
+            placeholder='Email'
+            maxLength={40}
+            style={styles.inputField}
+            underlineColorAndroid='rgba(0,0,0,0)'
+          />
+          <TextInput
+            placeholder='Water Source'
+            style={styles.inputField}
+            underlineColorAndroid='rgba(0,0,0,0)'
+          />
+          <TextInput
+            placeholder='Phone Number'
+            keyboardType='numeric'
+            maxLength={11}
+            style={styles.inputField}
+            underlineColorAndroid='rgba(0,0,0,0)'
+          />
+          <TextInput
+            placeholder='Location'
+            style={styles.inputField}
+            underlineColorAndroid='rgba(0,0,0,0)'
+          />
+          <TextInput
+            placeholder='vehicle Number'
+            maxLength={10}
+            style={styles.inputField}
+            underlineColorAndroid='rgba(0,0,0,0)'
+          />
+          <TextInput
+            placeholder='Password'
+            maxLength={50}
+            secureEntryText={true}
+            style={styles.inputField}
+            underlineColorAndroid='rgba(0,0,0,0)'
+          />
+
           <TouchableOpacity>
             <Text>Continue</Text>
           </TouchableOpacity>
@@ -78,7 +109,8 @@ const styles = StyleSheet.create({
   inputField: {
     backgroundColor: "#F3F3F3",
     width: 302,
-    height: 40,
-    borderRadius: 10
+    borderRadius: 25,
+    paddingHorizontal: 16,
+    marginVertical: 16
   }
 });
