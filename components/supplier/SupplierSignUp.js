@@ -22,6 +22,20 @@ export default class SupplierSignUp extends React.Component {
   static navigationOptions = {
     header: null
   };
+  constructor(props){
+    super(props){
+        this.state{
+          firstname: '',
+          lastname:'',
+          password: '',
+          email: '',
+          mobile: '',
+          vehiclenumber: '',
+          location:'',
+          watersource:''
+        }
+    }
+  }
   render() {
     return (
       <KeyboardAvoidingView behaviour='padding' style={styles.wrapper}>
