@@ -83,9 +83,9 @@ export default class SupplierSignUp extends React.Component {
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>CONTINUE</Text>
           </TouchableOpacity>
-          <View style={styles.signupContent}>
-            <Text style={styles.signupText}>Already have an account?</Text>
-            <Text style={styles.signupButton}>Sign Up</Text>
+          <View style={styles.signinsContent}>
+            <Text style={styles.signinText}>Already have an account?</Text>
+            <Text style={styles.signinButton}>Sign In</Text>
           </View>
         </View>
       </KeyboardAvoidingView>
@@ -130,17 +130,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: 300
   },
-  signupContent: {
+  signinContent: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row"
   },
-  signupText: {
+  signinText: {
     color: "#2F2E41",
     fontSize: 16
   },
-  signupButton: {
+  signinButton: {
     color: "#6C63FF",
     fontSize: 16,
     fontWeight: "500"
