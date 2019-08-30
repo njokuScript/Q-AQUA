@@ -17,7 +17,9 @@ export default class screenChoice extends React.Component {
   };
   constructor(props) {
     super(props);
-    firebase.initializeApp(ApiKey.firebaseConfig);
+    if (!firebase.apps.length) {
+      firebase.initializeApp(ApiKey.firebaseConfig);
+    }
   }
   render() {
     return (
