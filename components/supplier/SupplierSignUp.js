@@ -99,17 +99,14 @@ export default class SupplierSignUp extends React.Component {
             Conditions
           </Text>
 
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => this.verifyAsync}
-          >
+          <TouchableOpacity style={styles.button} onPress={this.verifyAsync}>
             <Text style={styles.buttonText}>CONTINUE</Text>
           </TouchableOpacity>
           <View style={styles.signinContent}>
             <Text style={styles.signinText}>Already have an account?</Text>
             <TouchableOpacity
               style={styles.signinButton}
-              onPress={() => this.signInAsync}
+              onPress={this.signInAsync}
             >
               <Text style={styles.signinButtonText}>Sign In</Text>
             </TouchableOpacity>
@@ -121,24 +118,16 @@ export default class SupplierSignUp extends React.Component {
   //verify details
   verifyAsync = async () => {
     //await AsyncStorage.setItem('userToken', 'rider');
-    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (
-      this.state.firstname.trim() === "" ||
-      // this.state.email.trim() === "" ||
-      this.state.mobile.trim() === "" ||
-      this.state.lastname.trim() === "" ||
-      this.state.password.length == ""
-    ) {
-      Toast.show("All inputs must be filled!", Toast.SHORT, Toast.TOP);
-      return;
-    }
     // if (reg.test(this.state.email) === false) {
     //   Toast.show("INVALID EMAIL!", Toast.SHORT, Toast.TOP);
     //   return;
     // }
     firebase
       .auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .createUserWithEmailAndPassword(
+        this.state.email.trim(),
+        this.state.password
+      )
       .then(
         authData => {
           //create a supplier node with:firstname,lastname,phone,profile,vehicle number

@@ -4,7 +4,7 @@ export class SupplierHome extends Component {
   render() {
     return (
       <View>
-        <Text>Hey</Text>
+        <Text>Hey watsup</Text>
       </View>
     );
   }
