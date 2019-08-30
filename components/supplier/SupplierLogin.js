@@ -60,8 +60,8 @@ export default class SupplierLogin extends React.Component {
           <TouchableOpacity style={styles.button} onPress={this.signInAsync}>
             <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.buttonText}>Reset Password</Text>
+          <TouchableOpacity style={styles.reset}>
+            <Text style={styles.buttonTextRes}>RESET PASSWORD</Text>
           </TouchableOpacity>
           <View style={styles.signupContent}>
             <Text style={styles.signupText}>Don't have an account?</Text>
@@ -141,6 +141,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 6,
     marginVertical: 11
+  },
+  reset: {
+    paddingVertical: 6,
+    marginVertical: 11
+  },
+  buttonTextRes: {
+    color: "#6C63FF",
+    fontSize: 14
   },
   buttonText: {
     textAlign: "center",
