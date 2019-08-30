@@ -11,6 +11,7 @@ import SupplierHome from "./components/supplier/SupplierHome";
 import SupplierLogin from "./components/supplier/SupplierLogin";
 import SupplierSignUp from "./components/supplier/SupplierSignUp";
 import ForgotPassword from "./components/supplier/ForgotPassword";
+import SupplierVerifyNumber from "./components/supplier/SupplierVerifyNumber";
 
 class App extends React.Component {
   constructor(props) {
@@ -24,9 +25,7 @@ class App extends React.Component {
         source={require("./components/main/image/bimage.png")}
         style={styles.container}
       >
-        <View>
-          <ScreenChoice />
-        </View>
+        <View></View>
       </ImageBackground>
     );
   }
@@ -39,6 +38,7 @@ const AuthStack = createStackNavigator(
     SupplierScreen: SupplierLogSign,
     SupplierLog: SupplierLogin,
     SupplierReg: SupplierSignUp,
+    SupplierVerifyNum: SupplierVerifyNumber,
     SupplierResetPassWord: ForgotPassword,
     //customer
     CustomerScreen: CustomerHome

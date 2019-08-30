@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
-export class SupplierHome extends Component {
+export class SupplierHomeCon extends Component {
   render() {
     return (
       <View>
@@ -10,5 +10,5 @@ export class SupplierHome extends Component {
   }
 }
 
-export default SupplierHome;
+export default SupplierHomeCon;
 s;

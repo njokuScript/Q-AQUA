@@ -35,7 +35,7 @@ export default class SupplierVerifyNumber extends React.Component {
               We are unable to autoverify your mobile number
             </Text>
             <Text style={{ color: "gray", fontSize: 15, fontWeight: "bold" }}>
-              Please enter the code tested to your number
+              Please enter the code texted to your number
             </Text>
           </View>
 
@@ -47,7 +47,7 @@ export default class SupplierVerifyNumber extends React.Component {
           />
           <TouchableOpacity
             style={styles.SubmitButton}
-            onPress={this.signInAsync}
+            onPress={() => this.signInAsync}
           >
             <Text style={{ color: "#ffffff", fontWeight: "bold" }}>SUBMIT</Text>
           </TouchableOpacity>

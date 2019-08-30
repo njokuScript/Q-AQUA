@@ -57,17 +57,23 @@ export default class SupplierLogin extends React.Component {
           <TouchableOpacity style={styles.buttonCan}>
             <Text style={styles.buttonTextCan}>CANCEL</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={this.signInAsync}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => this.signInAsync}
+          >
             <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.reset} onPress={this._resetPassWords}>
+          <TouchableOpacity
+            style={styles.reset}
+            onPress={() => this._resetPassWords}
+          >
             <Text style={styles.buttonTextRes}>RESET PASSWORD</Text>
           </TouchableOpacity>
           <View style={styles.signupContent}>
             <Text style={styles.signupText}>Don't have an account?</Text>
             <TouchableOpacity
               style={styles.signupButton}
-              onPress={this.verifyAsync}
+              onPress={() => this.verifyAsync}
             >
               <Text style={styles.signupButtonText}>Sign Up</Text>
             </TouchableOpacity>
