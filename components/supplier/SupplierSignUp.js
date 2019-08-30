@@ -38,6 +38,14 @@ export default class SupplierSignUp extends React.Component {
       firebase.initializeApp(ApiKey.FirebaseConfig);
     }
   }
+  componentDidMount() {
+    this.authUnSubscriber = firebase.auth().onAuthStateChanged(authData => {
+      this.setState(authData);
+    });
+    YellowBox.ignoreWarnings(["Encountered an error loading page"]);
+    console.disableYellowBox = true;
+    //this.firestoreUnsubscriber = this.ref.onSnapshot(this.onCollectionUpdate)
+  }
   render() {
     return (
       <KeyboardAvoidingView behaviour='padding' style={styles.wrapper}>
@@ -107,7 +115,7 @@ export default class SupplierSignUp extends React.Component {
               style={styles.signinButton}
               onPress={this.navigateSupplierLogin}
             >
-              <Text>Sign In</Text>
+              <Text style={styles.signinButtonText}>Sign In</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -168,5 +176,10 @@ const styles = StyleSheet.create({
     color: "#6C63FF",
     fontSize: 16,
     fontWeight: "500"
+  },
+  signinButtonText: {
+    color: "#6C63FF",
+    fontSize: 16,
+    paddingLeft: 5
   }
 });

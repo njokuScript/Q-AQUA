@@ -49,6 +49,9 @@ export default class SupplierLogin extends React.Component {
             underlineColorAndroid='rgba(0,0,0,0)'
             onChangeText={password => this.setState({ password })}
           />
+          <TouchableOpacity style={styles.buttonCan}>
+            <Text style={styles.buttonTextCan}>CANCEL</Text>
+          </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Sign In</Text>
           </TouchableOpacity>
@@ -58,7 +61,7 @@ export default class SupplierLogin extends React.Component {
               style={styles.signupButton}
               onPress={this.navigateSupplierSignUp}
             >
-              <Text>Sign Up</Text>
+              <Text style={styles.signupButtonText}>Sign Up</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -68,17 +71,18 @@ export default class SupplierLogin extends React.Component {
 }
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "white"
   },
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center"
   },
   inputField: {
     backgroundColor: "#F3F3F3",
-    width: 306,
+    width: 315,
     height: 50,
     borderRadius: 10,
     paddingHorizontal: 16,
@@ -86,13 +90,27 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#6C63FF",
-    width: 306,
+    width: 315,
     height: 50,
     borderRadius: 10,
     paddingVertical: 6,
     marginVertical: 11
   },
   buttonText: {
+    textAlign: "center",
+    color: "#ffffff",
+    fontWeight: "bold",
+    fontSize: 20
+  },
+  buttonCan: {
+    backgroundColor: "#DCEAF2",
+    width: 315,
+    height: 50,
+    borderRadius: 10,
+    paddingVertical: 6,
+    marginVertical: 11
+  },
+  buttonTextCan: {
     textAlign: "center",
     color: "#ffffff",
     fontWeight: "bold",
@@ -105,7 +123,6 @@ const styles = StyleSheet.create({
     width: 300
   },
   signupContent: {
-    flex: 1,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row"
@@ -118,5 +135,10 @@ const styles = StyleSheet.create({
     color: "#6C63FF",
     fontSize: 16,
     fontWeight: "500"
+  },
+  signupButtonText: {
+    color: "#6C63FF",
+    fontSize: 16,
+    paddingLeft: 10
   }
 });
