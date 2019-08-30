@@ -13,17 +13,7 @@ import {
 import PhoneInput from "react-native-phone-input";
 export default class ForgotPassword extends React.Component {
   static navigationOptions = {
-    headerStyle: {
-      backgroundColor: "#42A5F5"
-    },
-    headerTitleStyle: {
-      color: "#fff"
-    },
-    headerBackTitleStyle: {
-      color: "#fff"
-    },
-    headerTintColor: "#fff",
-    title: "Forgot Password"
+    header: null
   };
   constructor(props) {
     super(props);
@@ -57,7 +47,7 @@ export default class ForgotPassword extends React.Component {
           />
           <TouchableOpacity
             style={styles.ResetPassword}
-            onPress={this._resetPassWord}
+            onPress={this._resetPassWords}
           >
             <Text style={{ color: "#ffffff", fontWeight: "bold" }}>
               RESET PASSWORD
@@ -68,8 +58,8 @@ export default class ForgotPassword extends React.Component {
     );
   }
   _resetPassWords = async () => {
-    //await AsyncStorage.setItem('userToken', 'rider');
-    //this.props.navigation.navigate('App1');
+    await AsyncStorage.setItem("userToken", "Supplier");
+    this.props.navigation.navigate("App1");
     alert("reset password");
   };
 }

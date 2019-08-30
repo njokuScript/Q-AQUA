@@ -60,7 +60,7 @@ export default class SupplierLogin extends React.Component {
           <TouchableOpacity style={styles.button} onPress={this.signInAsync}>
             <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.reset} onPress={this._resetPassWord}>
+          <TouchableOpacity style={styles.reset} onPress={this._resetPassWords}>
             <Text style={styles.buttonTextRes}>RESET PASSWORD</Text>
           </TouchableOpacity>
           <View style={styles.signupContent}>
