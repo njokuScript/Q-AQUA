@@ -121,21 +121,16 @@ export default class SupplierSignUp extends React.Component {
     let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (
       this.state.firstname.trim() === "" ||
-      this.state.email.trim() === "" ||
+      //this.state.email.trim() === "" ||
       this.state.mobile.trim() === "" ||
       this.state.lastname.trim() === "" ||
       this.state.password.length == ""
     ) {
-      Toast.show(
-        "All inputs must be filled!",
-        Toast.SHORT,
-        Toast.TOP,
-        ToastStyle
-      );
+      Toast.show("All inputs must be filled!", Toast.SHORT, Toast.TOP);
       return;
     }
     if (reg.test(this.state.email) === false) {
-      Toast.show("INVALID EMAIL!", Toast.SHORT, Toast.TOP, ToastStyle);
+      Toast.show("INVALID EMAIL!", Toast.SHORT, Toast.TOP);
       return;
     }
     firebase
@@ -164,7 +159,7 @@ export default class SupplierSignUp extends React.Component {
                   () => {
                     Toast.show("Supplier added successfully", Toast.SHORT);
                     this.setState({ color: "#ffffff" });
-                    this.props.navigation.navigate("App1");
+                    this.props.navigation.navigate("App2");
                   },
                   error => {
                     Toast.show(error.message, Toast.SHORT);
@@ -174,7 +169,7 @@ export default class SupplierSignUp extends React.Component {
             }
           }
 
-          //this.props.navigation.navigate('App1');
+          //this.props.navigation.navigate('App2');
         },
         error => {
           Toast.show("error:" + error.message, Toast.SHORT, Toast.TOP);
@@ -184,28 +179,39 @@ export default class SupplierSignUp extends React.Component {
 
     //.catch(error => this.setState({ errorMessage: error.message }))
   };
-  //navigate to the verify Number and then parse on it mobile
-  //this.props.navigation.navigate({routeName:'RiderVerifyNum', params: { phonenumber:this.state.mobile} });
-  /*firebase.auth().getUserByPhoneNumber(this.state.mobile)
-  .then(userRecord => {
-      sendSMSVerification(res, userRecord.uid,this.state.mobile);
-  })
-  .catch(getUserErr => {
-    if (getUserErr.code === 'auth/user-not-found') {
-      firebase.auth().createUser({
-        phoneNumber: this.state.mobile
-      })
-      .then(userRecord => {
-        sendSMSVerification(res, userRecord.uid, this.state.mobile);
-      })
-      .catch(userCreateErr => {
-        return res.status(422).send(userCreateErr);
-      });
-    } else {
-      res.status(422).send({ error: getUserErr });
-    }
-  });*/
 }
+
+//-------------------------------------------------------------------------------------------------//
+//SEND VERIFICATION MESSAGE
+//------------------------------------------------------------------------------------------------//
+
+const sendSMSVerification = (res, uid, phone) => {
+  const code = Math.floor(Math.random() * 899999 + 100000);
+  const expiration = Date.now() + 2 * 60000; // Expires in 2 minutes
+  const verification = { code, expiration, valid: true };
+
+  twilio.messages
+    .create({
+      body: `Your code is ${code}`,
+      to: twilioConfig.phone_dev ? twilioConfig.phone_dev : phone,
+      from: twilioConfig.phone_from
+    })
+    .then(message => {
+      firebase
+        .database()
+        .ref(`/users/${uid}/verification`)
+        .set(verification)
+        .then(() => {
+          return res.send({ success: true });
+        })
+        .catch(err => {
+          return res.status(422).send(err);
+        });
+    })
+    .catch(err => {
+      return res.status(422).send(err);
+    });
+};
 
 const styles = StyleSheet.create({
   wrapper: {
