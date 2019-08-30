@@ -109,11 +109,11 @@ export default class SupplierSignUp extends React.Component {
           <TouchableOpacity style={styles.button} onPress={this.verifyAsync}>
             <Text style={styles.buttonText}>CONTINUE</Text>
           </TouchableOpacity>
-          <View style={styles.signinsContent}>
+          <View style={styles.signinContent}>
             <Text style={styles.signinText}>Already have an account?</Text>
             <TouchableOpacity
               style={styles.signinButton}
-              onPress={this.navigateSupplierLogin}
+              onPress={this.signInAsync}
             >
               <Text style={styles.signinButtonText}>Sign In</Text>
             </TouchableOpacity>

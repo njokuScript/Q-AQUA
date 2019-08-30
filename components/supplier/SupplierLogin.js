@@ -16,6 +16,7 @@ import {
 import PhoneInput from "react-native-phone-input";
 import Toast from "react-native-simple-toast";
 import { Ionicons } from "@expo/vector-icons";
+import SupplierSignUp from "./SupplierSignUp";
 import * as firebase from "firebase";
 import ApiKey from "../constants/ApiKey";
 
@@ -56,7 +57,7 @@ export default class SupplierLogin extends React.Component {
           <TouchableOpacity style={styles.buttonCan}>
             <Text style={styles.buttonTextCan}>CANCEL</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={this.signInAsync}>
             <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -66,7 +67,7 @@ export default class SupplierLogin extends React.Component {
             <Text style={styles.signupText}>Don't have an account?</Text>
             <TouchableOpacity
               style={styles.signupButton}
-              onPress={this.navigateSupplierSignUp}
+              onPress={this.verifyAsync}
             >
               <Text style={styles.signupButtonText}>Sign Up</Text>
             </TouchableOpacity>
@@ -75,7 +76,45 @@ export default class SupplierLogin extends React.Component {
       </KeyboardAvoidingView>
     );
   }
+  signInAsync = async () => {
+    //await AsyncStorage.setItem('userToken', 'rider');
+
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (this.state.email.trim() === "") {
+      Toast.show("email input must be filled!", Toast.SHORT, Toast.TOP);
+      return;
+    }
+    if (this.state.password.length == "") {
+      Toast.show("password must be filled!", Toast.SHORT, Toast.TOP);
+      return;
+    }
+    if (this.state.email === false) {
+      Toast.show("INVALID EMAIL!", Toast.SHORT, Toast.TOP);
+      return;
+    }
+    //this.setState({animating:true})
+    this.setState({ color: "#42A5F5" });
+    //this.props.navigation.navigate('App1');
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then(
+        () => {
+          AsyncStorage.setItem("SupplierId", firebase.auth().currentUser.uid);
+          //AsyncStorage.setItem('userToken', 'rider');
+          //create a rider node with:firstname,lastname,phone,profile
+          this.setState({ color: "#ffffff" });
+
+          this.props.navigation.navigate("App2");
+        },
+        error => {
+          Toast.show("error:" + error.message, Toast.SHORT, Toast.TOP);
+          this.setState({ color: "#ffffff" });
+        }
+      );
+  };
 }
+
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
