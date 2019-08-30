@@ -123,7 +123,97 @@ export default class SupplierSignUp extends React.Component {
     );
   }
   //verify details
+  verifyAsync = async () => {
+    //await AsyncStorage.setItem('userToken', 'rider');
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (
+      this.state.firstname.trim() === "" ||
+      this.state.email.trim() === "" ||
+      this.state.mobile.trim() === "" ||
+      this.state.lastname.trim() === "" ||
+      this.state.password.length == ""
+    ) {
+      Toast.show(
+        "All inputs must be filled!",
+        Toast.SHORT,
+        Toast.TOP,
+        ToastStyle
+      );
+      return;
+    }
+    if (reg.test(this.state.email) === false) {
+      Toast.show("INVALID EMAIL!", Toast.SHORT, Toast.TOP, ToastStyle);
+      return;
+    }
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then(
+        authData => {
+          //create a supplier node with:firstname,lastname,phone,profile,vehicle number
+
+          if (firebase.auth().currentUser) {
+            userId = firebase.auth().currentUser.uid;
+            if (userId) {
+              AsyncStorage.setItem("supplierId", userId);
+              firebase
+                .database()
+                .ref(`Suppliers/${userId}/Details`)
+                .set({
+                  firstname: this.state.firstname,
+                  lastname: this.state.lastname,
+                  email: this.state.email,
+                  phone: this.state.mobile,
+                  vehicle_number: this.state.vehiclenumber,
+                  profile_image: "default"
+                })
+                .then(
+                  () => {
+                    Toast.show("Supplier added successfully", Toast.SHORT);
+                    this.setState({ color: "#ffffff" });
+                    this.props.navigation.navigate("App1");
+                  },
+                  error => {
+                    Toast.show(error.message, Toast.SHORT);
+                    this.setState({ color: "#ffffff" });
+                  }
+                );
+            }
+          }
+
+          //this.props.navigation.navigate('App1');
+        },
+        error => {
+          Toast.show("error:" + error.message, Toast.SHORT, Toast.TOP);
+          this.setState({ color: "#ffffff" });
+        }
+      );
+
+    //.catch(error => this.setState({ errorMessage: error.message }))
+  };
+  //navigate to the verify Number and then parse on it mobile
+  //this.props.navigation.navigate({routeName:'RiderVerifyNum', params: { phonenumber:this.state.mobile} });
+  /*firebase.auth().getUserByPhoneNumber(this.state.mobile)
+  .then(userRecord => {
+      sendSMSVerification(res, userRecord.uid,this.state.mobile);
+  })
+  .catch(getUserErr => {
+    if (getUserErr.code === 'auth/user-not-found') {
+      firebase.auth().createUser({
+        phoneNumber: this.state.mobile
+      })
+      .then(userRecord => {
+        sendSMSVerification(res, userRecord.uid, this.state.mobile);
+      })
+      .catch(userCreateErr => {
+        return res.status(422).send(userCreateErr);
+      });
+    } else {
+      res.status(422).send({ error: getUserErr });
+    }
+  });*/
 }
+
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1
