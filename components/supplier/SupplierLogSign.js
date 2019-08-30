@@ -9,7 +9,7 @@ import {
 
 import * as firebase from "firebase";
 import React from "react";
-//import ApiKey from "../constants/ApiKey";
+import ApiKey from "../constants/ApiKey";
 
 export default class screenChoice extends React.Component {
   static navigationOptions = {
@@ -17,7 +17,7 @@ export default class screenChoice extends React.Component {
   };
   constructor(props) {
     super(props);
-    //firebase.initializeApp(ApiKeys.FirebaseConfig);
+    firebase.initializeApp(ApiKey.firebaseConfig);
   }
   render() {
     return (
@@ -43,10 +43,10 @@ export default class screenChoice extends React.Component {
     );
   }
 
-  navigateSupplierLogin = () => {
+  navigateSupplierLogin = async () => {
     this.props.navigation.navigate("SupplierLog");
   };
-  navigateSupplierSignUp = () => {
+  navigateSupplierSignUp = async () => {
     this.props.navigation.navigate("SupplierReg");
   };
 }

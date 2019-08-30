@@ -29,6 +29,10 @@ export default class SupplierLogin extends React.Component {
       email: "",
       password: ""
     };
+    //firebase initialize
+    if (!firebase.apps.length) {
+      firebase.initializeApp(ApiKey.firebaseConfig);
+    }
   }
   render() {
     return (
@@ -53,7 +57,10 @@ export default class SupplierLogin extends React.Component {
             <Text style={styles.buttonTextCan}>CANCEL</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Sign In</Text>
+            <Text style={styles.buttonText}>LOGIN</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.buttonText}>Reset Password</Text>
           </TouchableOpacity>
           <View style={styles.signupContent}>
             <Text style={styles.signupText}>Don't have an account?</Text>
@@ -112,7 +119,7 @@ const styles = StyleSheet.create({
   },
   buttonTextCan: {
     textAlign: "center",
-    color: "#ffffff",
+    color: "#707070",
     fontWeight: "bold",
     fontSize: 20
   },

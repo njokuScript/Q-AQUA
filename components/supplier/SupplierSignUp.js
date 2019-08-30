@@ -35,7 +35,7 @@ export default class SupplierSignUp extends React.Component {
     };
     //firebase initialize
     if (!firebase.apps.length) {
-      firebase.initializeApp(ApiKey.FirebaseConfig);
+      firebase.initializeApp(ApiKey.firebaseConfig);
     }
   }
   componentDidMount() {
@@ -106,7 +106,7 @@ export default class SupplierSignUp extends React.Component {
             Conditions
           </Text>
 
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={this.verifyAsync}>
             <Text style={styles.buttonText}>CONTINUE</Text>
           </TouchableOpacity>
           <View style={styles.signinsContent}>
@@ -155,7 +155,7 @@ export default class SupplierSignUp extends React.Component {
           if (firebase.auth().currentUser) {
             userId = firebase.auth().currentUser.uid;
             if (userId) {
-              AsyncStorage.setItem("supplierId", userId);
+              AsyncStorage.setItem("SupplierId", userId);
               firebase
                 .database()
                 .ref(`Suppliers/${userId}/Details`)
