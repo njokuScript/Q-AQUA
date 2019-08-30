@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Fri Aug 30 2019 17:22:17 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* components/supplier/SupplierLogin.js
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
