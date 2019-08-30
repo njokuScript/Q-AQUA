@@ -30,8 +30,7 @@ export default class SupplierSignUp extends React.Component {
       password: "",
       email: "",
       mobile: "",
-      vehiclenumber: "",
-      watersource: ""
+      vehiclenumber: ""
     };
     //firebase initialize
     if (!firebase.apps.length) {
@@ -72,12 +71,6 @@ export default class SupplierSignUp extends React.Component {
             onChangeText={email => this.setState({ email })}
           />
           <TextInput
-            placeholder='Water Source'
-            style={styles.inputField}
-            underlineColorAndroid='rgba(0,0,0,0)'
-            onChangeText={watersource => this.setState({ watersource })}
-          />
-          <TextInput
             placeholder='Mobile'
             keyboardType='numeric'
             maxLength={11}
@@ -90,7 +83,7 @@ export default class SupplierSignUp extends React.Component {
             maxLength={10}
             style={styles.inputField}
             underlineColorAndroid='rgba(0,0,0,0)'
-            onChangeText={vehiclenumber => this.setState({ watersource })}
+            onChangeText={vehiclenumber => this.setState({ vehiclenumber })}
           />
           <TextInput
             placeholder='Password'
